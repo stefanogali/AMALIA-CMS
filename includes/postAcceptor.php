@@ -2,6 +2,7 @@
   /*******************************************************
    * Only these origins will be allowed to upload images *
    ******************************************************/
+  //please change the URL below if you wish only the domains in the array to be able to upload images
   $accepted_origins = array("http://localhost", "http://192.168.1.1", "http://titan.dcs.bbk.ac.uk/");
 
   /*********************************************
@@ -15,7 +16,9 @@
   if (is_uploaded_file($temp['tmp_name'])){
     if (isset($_SERVER['HTTP_ORIGIN'])) {
       // same-origin requests won't set an origin. If the origin is set, it must be valid.
-      if (in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)) {
+
+      //uncomment the IF statement below if you wish to allow only certain domains to upload photos as defined in $accepted_origins array
+      //if (in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)) {
         header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
       } else {
         /*header("HTTP/1.0 403 Origin Denied");
@@ -24,7 +27,7 @@
         header("Access-Control-Allow-Origin: *");
         //return;
       }
-    }
+    //}
 
     /*
       If your script needs to receive cookies, set images_upload_credentials : true in
