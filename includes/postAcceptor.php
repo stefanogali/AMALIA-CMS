@@ -43,7 +43,7 @@
     }
 
     // Verify extension
-    if (!in_array(strtolower(pathinfo($temp['name'], PATHINFO_EXTENSION)), array("jpg", "png", "JPG", "JPEG", "PNG"))) {
+    if (!in_array(strtolower(pathinfo($temp['name'], PATHINFO_EXTENSION)), array("jpg", "png", "JPG", "JPEG","jpeg", "PNG"))) {
         header("HTTP/1.0 500 Invalid extension.");
         return;
     }
