@@ -115,10 +115,12 @@ if (isset($_SESSION['logged_in'])){
 					$query->execute();
 				
     				foreach($icon['url'] as $value=>$url){
+    					if($url != ''){
 							$query = $dbh->prepare("UPDATE social_icons SET icon_selected = 1, icon_url = (?) WHERE icons_id = ?");
 							$query->bindValue(1,$url);
-							$query->bindValue(2,$value+1);
+							$query->bindValue(2,$value + 1);
 							$query->execute();
+						}
     				}
   				}
 			}
