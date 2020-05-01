@@ -10,9 +10,11 @@ USAGE
 Download the application and open includes/connection.php - Replace the database settings and go to your-url/admin. Create a new user in the register page NOTE: there is no password reset or password retrieve implemented.
 
 EXAMPLE
-A working example can be found at http://cmsapp.x10host.com
+A working example can be found at http://cmsapp.epizy.com/
+
+got to
+http://cmsapp.epizy.com/admin
 LOGIN DETAILS:
-http://cmsapp.x10host.com/admin
 UN: admin
 PW: password01
 
